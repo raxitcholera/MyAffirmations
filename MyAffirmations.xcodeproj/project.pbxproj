@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780B39FF1F48AB2600466CFD /* Affermations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780B39FD1F48AB2600466CFD /* Affermations+CoreDataClass.swift */; };
 		786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F75721F47C272000662BC /* RecordSoundsViewController.swift */; };
 		7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB381F41EC9100B04E3C /* AppDelegate.swift */; };
 		7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB3A1F41EC9100B04E3C /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780B39FD1F48AB2600466CFD /* Affermations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Affermations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		786F75721F47C272000662BC /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		7878FB351F41EC9100B04E3C /* MyAffirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAffirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7878FB381F41EC9100B04E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		7878FB371F41EC9100B04E3C /* MyAffirmations */ = {
 			isa = PBXGroup;
 			children = (
+				780B39FD1F48AB2600466CFD /* Affermations+CoreDataClass.swift */,
 				786F75721F47C272000662BC /* RecordSoundsViewController.swift */,
 				7878FB381F41EC9100B04E3C /* AppDelegate.swift */,
 				7878FB3A1F41EC9100B04E3C /* ViewController.swift */,
@@ -147,6 +150,7 @@
 				7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */,
 				786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */,
 				7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */,
+				780B39FF1F48AB2600466CFD /* Affermations+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ class RecordSoundsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "Recording Audio"
+        title = "Recording Affermation"
     }
 
     @IBAction func recordAudio(_ sender: AnyObject) {

@@ -70,11 +70,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Affermations" id="MjG-Qd-dVM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kF5-eo-zth">
-                            <connections>
-                                <segue destination="yDx-JP-Z38" kind="show" id="fKf-ln-WH1"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kF5-eo-zth"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,24 +135,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJD-Gb-t7e" userLabel="PlayRecordingButton">
-                                <rect key="frame" x="149" y="365" width="77.5" height="77.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77.5" id="2sw-Xg-ZIZ"/>
-                                    <constraint firstAttribute="height" constant="77.5" id="LYR-ix-LWn"/>
-                                </constraints>
-                                <state key="normal" image="Play"/>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Affermation Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWO-fM-pJG">
+                                <rect key="frame" x="26" y="153" width="323" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cWO-fM-pJG" firstAttribute="leading" secondItem="0ib-kN-kWS" secondAttribute="leadingMargin" constant="10" id="3AQ-CK-tgm"/>
                             <constraint firstItem="0s2-BA-K2L" firstAttribute="top" secondItem="QTw-sT-0ME" secondAttribute="bottom" constant="20" id="5Vm-fY-3Dh"/>
                             <constraint firstItem="QTw-sT-0ME" firstAttribute="top" secondItem="7iK-Yt-280" secondAttribute="bottom" constant="20" id="Aqz-dT-XsY"/>
+                            <constraint firstItem="7iK-Yt-280" firstAttribute="top" secondItem="cWO-fM-pJG" secondAttribute="bottom" constant="43" id="BKn-yx-xgU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cWO-fM-pJG" secondAttribute="trailing" constant="10" id="C3P-OY-nMf"/>
                             <constraint firstItem="7iK-Yt-280" firstAttribute="centerX" secondItem="0ib-kN-kWS" secondAttribute="centerX" id="C6q-pi-32n"/>
                             <constraint firstItem="0s2-BA-K2L" firstAttribute="centerX" secondItem="QTw-sT-0ME" secondAttribute="centerX" id="IIk-a9-obR"/>
                             <constraint firstItem="QTw-sT-0ME" firstAttribute="centerY" secondItem="0ib-kN-kWS" secondAttribute="centerY" id="KeL-fr-ZGs"/>
-                            <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerX" secondItem="0ib-kN-kWS" secondAttribute="centerX" id="UBp-8w-Yyx"/>
-                            <constraint firstItem="fJD-Gb-t7e" firstAttribute="top" secondItem="QTw-sT-0ME" secondAttribute="bottom" constant="20.5" id="WaI-U3-GT1"/>
                             <constraint firstItem="QTw-sT-0ME" firstAttribute="centerX" secondItem="7iK-Yt-280" secondAttribute="centerX" id="fMr-1K-ZrO"/>
                             <constraint firstItem="0s2-BA-K2L" firstAttribute="centerX" secondItem="0ib-kN-kWS" secondAttribute="centerX" id="rhK-Oj-T1f"/>
                         </constraints>
@@ -172,6 +167,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUM-u0-Z8a" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1874" y="793"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SUR-wq-OTd">
+            <objects>
+                <viewController storyboardIdentifier="Playrecordedvoice" id="ohc-Zx-BIN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g5R-y1-kxc"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjd-da-wbx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rO1-rN-PYr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJD-Gb-t7e" userLabel="PlayRecordingButton">
+                                <rect key="frame" x="149" y="295" width="77.5" height="77.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77.5" id="2sw-Xg-ZIZ"/>
+                                    <constraint firstAttribute="height" constant="77.5" id="LYR-ix-LWn"/>
+                                </constraints>
+                                <state key="normal" image="Play"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqG-2t-v7A" userLabel="AffermationName">
+                                <rect key="frame" x="26" y="242" width="323" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pqG-2t-v7A" secondAttribute="trailing" constant="10" id="2qf-Xa-CMb"/>
+                            <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerX" secondItem="rO1-rN-PYr" secondAttribute="centerX" id="EcA-sk-k7u"/>
+                            <constraint firstItem="fJD-Gb-t7e" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="53" id="eGV-Fx-zca"/>
+                            <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerY" secondItem="rO1-rN-PYr" secondAttribute="centerY" id="pB7-AS-FJv"/>
+                            <constraint firstItem="pqG-2t-v7A" firstAttribute="leading" secondItem="rO1-rN-PYr" secondAttribute="leadingMargin" constant="10" id="yb6-ir-07G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjN-ma-Fgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="1472"/>
         </scene>
     </scenes>
     <resources>

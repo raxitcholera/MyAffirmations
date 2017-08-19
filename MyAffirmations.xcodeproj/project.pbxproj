@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F75721F47C272000662BC /* RecordSoundsViewController.swift */; };
 		7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB381F41EC9100B04E3C /* AppDelegate.swift */; };
 		7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB3A1F41EC9100B04E3C /* ViewController.swift */; };
 		7878FB3E1F41EC9100B04E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7878FB3C1F41EC9100B04E3C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		786F75721F47C272000662BC /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		7878FB351F41EC9100B04E3C /* MyAffirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAffirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7878FB381F41EC9100B04E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7878FB3A1F41EC9100B04E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		7878FB371F41EC9100B04E3C /* MyAffirmations */ = {
 			isa = PBXGroup;
 			children = (
+				786F75721F47C272000662BC /* RecordSoundsViewController.swift */,
 				7878FB381F41EC9100B04E3C /* AppDelegate.swift */,
 				7878FB3A1F41EC9100B04E3C /* ViewController.swift */,
 				7878FB3C1F41EC9100B04E3C /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				7878FB411F41EC9100B04E3C /* MyAffirmations.xcdatamodeld in Sources */,
 				7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */,
+				786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */,
 				7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ class RecordSoundsViewController: UIViewController {
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordinButton: UIButton!
-    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var AffermationName: UITextField!
     var audioRecorder: AVAudioRecorder!
     
     

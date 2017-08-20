@@ -158,7 +158,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NSz-dL-vTF"/>
                     <connections>
-                        <outlet property="playButton" destination="fJD-Gb-t7e" id="N7x-v3-YP3"/>
+                        <outlet property="AffermationName" destination="cWO-fM-pJG" id="ELf-Mg-NaG"/>
                         <outlet property="recordinButton" destination="7iK-Yt-280" id="uoV-Fm-jbC"/>
                         <outlet property="recordingLabel" destination="QTw-sT-0ME" id="047-ud-Zdp"/>
                         <outlet property="stopButton" destination="0s2-BA-K2L" id="1lz-3P-htt"/>

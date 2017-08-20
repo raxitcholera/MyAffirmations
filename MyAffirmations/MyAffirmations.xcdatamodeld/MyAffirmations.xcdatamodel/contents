@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Affermations" representedClassName="Affermations" syncable="YES">
-        <attribute name="audiofile" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="createdon" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="audiofile" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" indexed="YES" syncable="YES"/>
+        <attribute name="createdon" optional="YES" attributeType="Date" minDateTimeInterval="524966100" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Affermations" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Affermations" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

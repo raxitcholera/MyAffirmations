@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		780B39FF1F48AB2600466CFD /* Affermations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780B39FD1F48AB2600466CFD /* Affermations+CoreDataClass.swift */; };
 		7853082B1F4A591F001B1D68 /* Affermations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7853082A1F4A591F001B1D68 /* Affermations+CoreDataProperties.swift */; };
+		7853082D1F4A59AE001B1D68 /* brahmavidya.json in Resources */ = {isa = PBXBuildFile; fileRef = 7853082C1F4A59AE001B1D68 /* brahmavidya.json */; };
 		786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F75721F47C272000662BC /* RecordSoundsViewController.swift */; };
 		7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB381F41EC9100B04E3C /* AppDelegate.swift */; };
 		7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB3A1F41EC9100B04E3C /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		780B39FD1F48AB2600466CFD /* Affermations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Affermations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7853082A1F4A591F001B1D68 /* Affermations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Affermations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7853082C1F4A59AE001B1D68 /* brahmavidya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = brahmavidya.json; sourceTree = "<group>"; };
 		786F75721F47C272000662BC /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		7878FB351F41EC9100B04E3C /* MyAffirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAffirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7878FB381F41EC9100B04E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		7878FB371F41EC9100B04E3C /* MyAffirmations */ = {
 			isa = PBXGroup;
 			children = (
+				7853082C1F4A59AE001B1D68 /* brahmavidya.json */,
 				7853082A1F4A591F001B1D68 /* Affermations+CoreDataProperties.swift */,
 				780B39FD1F48AB2600466CFD /* Affermations+CoreDataClass.swift */,
 				786F75721F47C272000662BC /* RecordSoundsViewController.swift */,
@@ -136,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7853082D1F4A59AE001B1D68 /* brahmavidya.json in Resources */,
 				7878FB461F41EC9100B04E3C /* LaunchScreen.storyboard in Resources */,
 				7878FB431F41EC9100B04E3C /* Assets.xcassets in Resources */,
 				7878FB3E1F41EC9100B04E3C /* Main.storyboard in Resources */,

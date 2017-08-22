@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        preloadData()
+        checkIfFirstLaunch()
         return true
     }
     
@@ -46,8 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
+    func checkIfFirstLaunch() {
+        if UserDefaults.standard.bool(forKey: "HasLaunchedBefore") {
+            print("App has launched before")
+        } else {
+            print("This is the first launch ever!")
+            UserDefaults.standard.set(true, forKey: "HasLaunchedBefore")
+            preloadData()
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     func preloadData() {
-        
         // Remove previous stuff (if any)
         do {
             try dbStack.dropAllData()
@@ -55,15 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error droping all objects in DB")
         }
         
-        //read json file from sandbox
-        readbrahmavidyaJson()
-        
-        // Create Affermations for each object
-        
-        
-    }
-    
-    private func readbrahmavidyaJson() {
         do {
             if let file = Bundle.main.url(forResource: "brahmavidya", withExtension: "json") {
                 let data = try Data(contentsOf: file)
@@ -83,8 +84,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error.localizedDescription)
         }
     }
-
-
     
 }
 extension NSObject

@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7853082D1F4A59AE001B1D68 /* brahmavidya.json in Resources */ = {isa = PBXBuildFile; fileRef = 7853082C1F4A59AE001B1D68 /* brahmavidya.json */; };
-		7853082F1F4BC0DA001B1D68 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7853082E1F4BC0DA001B1D68 /* CoreDataStack.swift */; };
 		785308321F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785308301F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift */; };
 		785308351F4BC264001B1D68 /* Affermations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785308341F4BC264001B1D68 /* Affermations+CoreDataProperties.swift */; };
 		786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F75721F47C272000662BC /* RecordSoundsViewController.swift */; };
+		7871FD4F1F4BD28E000BD3DC /* commonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871FD4E1F4BD28E000BD3DC /* commonFunctions.swift */; };
+		7871FD511F4BD698000BD3DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871FD501F4BD698000BD3DC /* CoreDataStack.swift */; };
+		7871FD531F4BD9E7000BD3DC /* PlayAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871FD521F4BD9E7000BD3DC /* PlayAudioViewController.swift */; };
 		7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB381F41EC9100B04E3C /* AppDelegate.swift */; };
 		7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878FB3A1F41EC9100B04E3C /* ViewController.swift */; };
 		7878FB3E1F41EC9100B04E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7878FB3C1F41EC9100B04E3C /* Main.storyboard */; };
@@ -22,10 +24,12 @@
 
 /* Begin PBXFileReference section */
 		7853082C1F4A59AE001B1D68 /* brahmavidya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = brahmavidya.json; sourceTree = "<group>"; };
-		7853082E1F4BC0DA001B1D68 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		785308301F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Affermations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		785308341F4BC264001B1D68 /* Affermations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Affermations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		786F75721F47C272000662BC /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
+		7871FD4E1F4BD28E000BD3DC /* commonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commonFunctions.swift; sourceTree = "<group>"; };
+		7871FD501F4BD698000BD3DC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CoreDataStack.swift; sourceTree = "<group>"; };
+		7871FD521F4BD9E7000BD3DC /* PlayAudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAudioViewController.swift; sourceTree = "<group>"; };
 		7878FB351F41EC9100B04E3C /* MyAffirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAffirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7878FB381F41EC9100B04E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7878FB3A1F41EC9100B04E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,11 +70,13 @@
 		7878FB371F41EC9100B04E3C /* MyAffirmations */ = {
 			isa = PBXGroup;
 			children = (
+				7871FD521F4BD9E7000BD3DC /* PlayAudioViewController.swift */,
+				7871FD4E1F4BD28E000BD3DC /* commonFunctions.swift */,
 				785308341F4BC264001B1D68 /* Affermations+CoreDataProperties.swift */,
 				785308301F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift */,
 				7853082C1F4A59AE001B1D68 /* brahmavidya.json */,
-				7853082E1F4BC0DA001B1D68 /* CoreDataStack.swift */,
 				786F75721F47C272000662BC /* RecordSoundsViewController.swift */,
+				7871FD501F4BD698000BD3DC /* CoreDataStack.swift */,
 				7878FB381F41EC9100B04E3C /* AppDelegate.swift */,
 				7878FB3A1F41EC9100B04E3C /* ViewController.swift */,
 				7878FB3C1F41EC9100B04E3C /* Main.storyboard */,
@@ -157,12 +163,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				785308321F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift in Sources */,
-				7853082F1F4BC0DA001B1D68 /* CoreDataStack.swift in Sources */,
+				7871FD4F1F4BD28E000BD3DC /* commonFunctions.swift in Sources */,
 				785308351F4BC264001B1D68 /* Affermations+CoreDataProperties.swift in Sources */,
 				7878FB411F41EC9100B04E3C /* MyAffirmations.xcdatamodeld in Sources */,
 				7878FB3B1F41EC9100B04E3C /* ViewController.swift in Sources */,
+				7871FD531F4BD9E7000BD3DC /* PlayAudioViewController.swift in Sources */,
 				786F75731F47C272000662BC /* RecordSoundsViewController.swift in Sources */,
 				7878FB391F41EC9100B04E3C /* AppDelegate.swift in Sources */,
+				7871FD511F4BD698000BD3DC /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,9 +19,7 @@ public class Affermations: NSManagedObject {
             self.name = dictionary["name"] as? String ?? ""
             self.text = dictionary["text"] as? String ?? ""
             self.createdon = NSDate()
-            
         }
-            
         else
         {
             fatalError("Unable to find Entity name!")

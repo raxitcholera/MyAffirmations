@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preloadData()
         return true
     }
     
@@ -55,11 +56,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //read json file from sandbox
+        readbrahmavidyaJson()
         
         // Create Affermations for each object
         
         
     }
+    
+    private func readbrahmavidyaJson() {
+        do {
+            if let file = Bundle.main.url(forResource: "brahmavidya", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let responseData = try JSONSerialization.jsonObject(with: data, options: [])
+                
+                let response = responseData as? NSDictionary
+                let myAffermations = response?.value(forKey: "allAffermations")  as! [[String:Any]]
+                for i in 0 ..< myAffermations.count{
+                    
+                    _ = Affermations(dictionary: myAffermations[i], context: dbStack.context)
+                    dbStack.save()
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+
     
 }
 extension NSObject

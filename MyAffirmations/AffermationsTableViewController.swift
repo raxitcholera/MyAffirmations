@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AffermationsTableViewController.swift
 //  MyAffirmations
 //
 //  Created by Raxit Cholera on 8/14/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class AffermationsTableViewController: UIViewController {
 
     var allAffermations:[Affermations]!
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension AffermationsTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

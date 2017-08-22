@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Affermations" representedClassName="Affermations" syncable="YES">
+    <entity name="Affermations" representedClassName=".Affermations" syncable="YES">
         <attribute name="audiofile" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" indexed="YES" syncable="YES"/>
         <attribute name="createdon" optional="YES" attributeType="Date" minDateTimeInterval="524966100" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>

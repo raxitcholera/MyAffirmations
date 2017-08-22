@@ -2,7 +2,7 @@
 //  Affermations+CoreDataProperties.swift
 //  MyAffirmations
 //
-//  Created by Raxit Cholera on 8/20/17.
+//  Created by Raxit Cholera on 8/21/17.
 //  Copyright © 2017 Raxit Cholera. All rights reserved.
 //
 

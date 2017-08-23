@@ -15,6 +15,7 @@ class RecordSoundsViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordinButton: UIButton!
     @IBOutlet weak var AffermationName: UITextField!
+    @IBOutlet weak var affirmationTextViwer: UITextView!
     var audioRecorder: AVAudioRecorder!
     var selectedAffermation:Affermations?
     
@@ -22,6 +23,15 @@ class RecordSoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stopButton.isEnabled = false
+        if ((selectedAffermation) != nil) {
+            let htmlData = NSString(string: (selectedAffermation?.text)!).data(using: String.Encoding.unicode.rawValue)
+            let attributedString = try! NSAttributedString(data: htmlData!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName:UIColor.black], documentAttributes: nil)
+            affirmationTextViwer.attributedText = attributedString
+        }else {
+            print("Add Mode")
+//            affirmationTextViwer.isEditable = true
+            
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

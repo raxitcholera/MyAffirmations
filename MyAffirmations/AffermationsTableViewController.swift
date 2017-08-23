@@ -62,6 +62,26 @@ extension AffermationsTableViewController: UITableViewDelegate, UITableViewDataS
         }
         
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        //Can add more features like share to the row here
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            let selectedAffermation = self.allAffermations[(indexPath as NSIndexPath).row]
+            let controller = self.storyboard!.instantiateViewController(withIdentifier: "RecordSoundsViewController") as! RecordSoundsViewController
+            controller.selectedAffermation = selectedAffermation
+            performOnMainthread {
+                self.navigationController!.pushViewController(controller, animated: true)
+            }
+        }
+        edit.backgroundColor = .red
+        return [edit]
+    }
 }
 
 

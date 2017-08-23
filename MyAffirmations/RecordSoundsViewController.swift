@@ -16,7 +16,7 @@ class RecordSoundsViewController: UIViewController {
     @IBOutlet weak var recordinButton: UIButton!
     @IBOutlet weak var AffermationName: UITextField!
     var audioRecorder: AVAudioRecorder!
-    
+    var selectedAffermation:Affermations?
     
     
     override func viewDidLoad() {

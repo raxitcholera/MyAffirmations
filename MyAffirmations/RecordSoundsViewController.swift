@@ -67,28 +67,16 @@ class RecordSoundsViewController: UIViewController {
         stopButton.isEnabled = isRecording
         recordingLabel.text = recordingText
     }
-   
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(segue.identifier == "stopRecording"){
-//            let playSoundVC = segue.destination as! PlayBackViewController
-//            let recordedAudioURL = sender as! NSURL
-//            playSoundVC.audioUrl = recordedAudioURL
-//        }
-//    }
-    
 }
 
 extension RecordSoundsViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag)
         {
-            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+            // Add code that would save the recordedSound.wav files content to core data.
+            //Once saved redirect to the listview with refresh command.
         } else {
-            let alert = UIAlertController(title: "Recording Failed", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(defaultAction)
-            present(alert, animated: true, completion: nil)
+            showAlertwith(title: "Recording Failed", message: "Please try again", vc: self)
         }
     }
 }

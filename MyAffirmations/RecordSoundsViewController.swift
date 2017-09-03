@@ -19,6 +19,7 @@ class RecordSoundsViewController: UIViewController, UITextFieldDelegate {
     var audioRecorder: AVAudioRecorder!
     var selectedAffermation:Affermations?
     var tempRecordingPath:URL?
+    var isinEditingMode: Bool = false
     
     
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class RecordSoundsViewController: UIViewController, UITextFieldDelegate {
             let attributedString = try! NSAttributedString(data: htmlData!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName:UIColor.black], documentAttributes: nil)
             affirmationTextViwer.attributedText = attributedString
             AffermationName.text = selectedAffermation?.name
+            isinEditingMode = true
         }else {
             print("Add Mode")
 //            affirmationTextViwer.isEditable = true
@@ -47,6 +49,9 @@ class RecordSoundsViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func recordAudio(_ sender: AnyObject) {
+        if AffermationName.text != "" {
+            
+        
         setUIState(isRecording: true, recordingText: "Recording in progress")
         
         let recordedFileName = "recordedSound.wav"
@@ -60,6 +65,10 @@ class RecordSoundsViewController: UIViewController, UITextFieldDelegate {
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
+        } else {
+            setUIState(isRecording: false, recordingText: "Please fill the name first")
+        }
+        
         
     }
 
@@ -88,7 +97,11 @@ extension RecordSoundsViewController: AVAudioRecorderDelegate {
                 dictionary["name"] = AffermationName.text as AnyObject
                 dictionary["text"] = " " as AnyObject
                 dictionary["createdon"] = Date() as AnyObject
+                if(isinEditingMode){
                 CoreDataManager.sharedManager.updateAffermation(selectedAffermation: selectedAffermation!, dictionary: dictionary)
+                } else {
+                    CoreDataManager.sharedManager.addAffermation(dictionary: dictionary)
+                }
                 //Once saved redirect to the listview with refresh command.
                 performOnMainthread {
                     _ = self.navigationController?.popViewController(animated: true)

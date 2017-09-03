@@ -95,7 +95,6 @@ extension RecordSoundsViewController: AVAudioRecorderDelegate {
                 var dictionary=[String:AnyObject]()
                 dictionary["audiofile"] = try NSData(contentsOf: tempRecordingPath!, options: NSData.ReadingOptions())
                 dictionary["name"] = AffermationName.text as AnyObject
-                dictionary["text"] = " " as AnyObject
                 dictionary["createdon"] = Date() as AnyObject
                 if(isinEditingMode){
                 CoreDataManager.sharedManager.updateAffermation(selectedAffermation: selectedAffermation!, dictionary: dictionary)

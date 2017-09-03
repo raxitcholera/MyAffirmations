@@ -18,6 +18,7 @@ public class Affermations: NSManagedObject {
             self.init(entity: ent, insertInto: context)
             self.name = dictionary["name"] as? String ?? ""
             self.text = dictionary["text"] as? String ?? ""
+            self.audiofile = dictionary["audiofile"] as? NSData ?? NSData()
             self.createdon = NSDate()
         }
         else

@@ -18,20 +18,13 @@ class AffermationsTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let request:NSFetchRequest<Affermations> = Affermations.fetchRequest()
-        do {
-            allAffermations = try dbStack.context.fetch(request)
-        }catch {
-            print("No records found")
-        }
+        
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        refreshView()
     }
-    
+
     func refreshView()
     {
         let request:NSFetchRequest<Affermations> = Affermations.fetchRequest()

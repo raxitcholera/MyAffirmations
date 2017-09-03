@@ -55,10 +55,19 @@ extension AffermationsTableViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedAffermation = allAffermations[(indexPath as NSIndexPath).row]
-        let controller = storyboard!.instantiateViewController(withIdentifier: "PlayAudioViewController") as! PlayAudioViewController
-        controller.selectedAffermation = selectedAffermation
-        performOnMainthread {
-            self.navigationController!.pushViewController(controller, animated: true)
+        
+        if selectedAffermation.audiofile != NSData(){
+            let controller = storyboard!.instantiateViewController(withIdentifier: "PlayAudioViewController") as! PlayAudioViewController
+            controller.selectedAffermation = selectedAffermation
+            performOnMainthread {
+                self.navigationController!.pushViewController(controller, animated: true)
+            }
+        } else {
+            let controller = self.storyboard!.instantiateViewController(withIdentifier: "RecordSoundsViewController") as! RecordSoundsViewController
+            controller.selectedAffermation = selectedAffermation
+            performOnMainthread {
+                self.navigationController!.pushViewController(controller, animated: true)
+            }
         }
         
     }

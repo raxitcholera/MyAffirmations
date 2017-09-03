@@ -13,7 +13,9 @@ class AffermationsTableViewController: UIViewController {
 
     var allAffermations:[Affermations]!
     
+    @IBOutlet weak var affermationSearch: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,9 @@ class AffermationsTableViewController: UIViewController {
     func refreshView()
     {
         let request:NSFetchRequest<Affermations> = Affermations.fetchRequest()
+        if(affermationSearch.text != "") {
+            request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", affermationSearch.text!)
+        }
         do {
             allAffermations = try dbStack.context.fetch(request)
         }catch {
@@ -105,4 +110,17 @@ extension AffermationsTableViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
+extension AffermationsTableViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        refreshView()
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        self.affermationSearch.endEditing(true)
+    }
+}
 

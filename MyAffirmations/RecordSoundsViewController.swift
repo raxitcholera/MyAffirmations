@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundsViewController: UIViewController {
+class RecordSoundsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
@@ -18,15 +18,18 @@ class RecordSoundsViewController: UIViewController {
     @IBOutlet weak var affirmationTextViwer: UITextView!
     var audioRecorder: AVAudioRecorder!
     var selectedAffermation:Affermations?
+    var tempRecordingPath:URL?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stopButton.isEnabled = false
+        AffermationName.delegate = self
         if ((selectedAffermation) != nil) {
             let htmlData = NSString(string: (selectedAffermation?.text)!).data(using: String.Encoding.unicode.rawValue)
             let attributedString = try! NSAttributedString(data: htmlData!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSFontAttributeName: UIFont.systemFont(ofSize: 16), NSForegroundColorAttributeName:UIColor.black], documentAttributes: nil)
             affirmationTextViwer.attributedText = attributedString
+            AffermationName.text = selectedAffermation?.name
         }else {
             print("Add Mode")
 //            affirmationTextViwer.isEditable = true
@@ -37,17 +40,22 @@ class RecordSoundsViewController: UIViewController {
         super.viewWillAppear(animated)
         title = "Recording Affermation"
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true);
+        return false;
+    }
 
     @IBAction func recordAudio(_ sender: AnyObject) {
         setUIState(isRecording: true, recordingText: "Recording in progress")
         
         let recordedFileName = "recordedSound.wav"
         let directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let filePath = NSURL.fileURL(withPathComponents: [directoryPath, recordedFileName])
+        tempRecordingPath = NSURL.fileURL(withPathComponents: [directoryPath, recordedFileName])
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
         
-        try! audioRecorder = AVAudioRecorder(url: filePath!, settings:[:])
+        try! audioRecorder = AVAudioRecorder(url: tempRecordingPath!, settings:[:])
         audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
@@ -74,7 +82,23 @@ extension RecordSoundsViewController: AVAudioRecorderDelegate {
         if(flag)
         {
             // Add code that would save the recordedSound.wav files content to core data.
-            //Once saved redirect to the listview with refresh command.
+            do {
+                var dictionary=[String:AnyObject]()
+                dictionary["audiofile"] = try NSData(contentsOf: tempRecordingPath!, options: NSData.ReadingOptions())
+                dictionary["name"] = AffermationName.text as AnyObject
+                dictionary["text"] = " " as AnyObject
+                dictionary["createdon"] = Date() as AnyObject
+                CoreDataManager.sharedManager.updateAffermation(selectedAffermation: selectedAffermation!, dictionary: dictionary)
+                //Once saved redirect to the listview with refresh command.
+                performOnMainthread {
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+            }
+            catch{
+                showAlertwith(title: "Recording Failed", message: "Please try again", vc: self)
+            }
+            
+            
         } else {
             showAlertwith(title: "Recording Failed", message: "Please try again", vc: self)
         }

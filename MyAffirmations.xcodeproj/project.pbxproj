@@ -53,6 +53,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784E24CE1F5CAB5400A367A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				785308341F4BC264001B1D68 /* Affermations+CoreDataProperties.swift */,
+				785308301F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift */,
+				7878FB3F1F41EC9100B04E3C /* MyAffirmations.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		784E24CF1F5CAB6A00A367A9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7871FD4E1F4BD28E000BD3DC /* commonFunctions.swift */,
+				7871FD501F4BD698000BD3DC /* CoreDataStack.swift */,
+				784E24CC1F5C4E6000A367A9 /* CoreDataManager.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		784E24D01F5CAB8500A367A9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7878FB381F41EC9100B04E3C /* AppDelegate.swift */,
+				7878FB3C1F41EC9100B04E3C /* Main.storyboard */,
+				7878FB421F41EC9100B04E3C /* Assets.xcassets */,
+				7878FB441F41EC9100B04E3C /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		784E24D11F5CAB9D00A367A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7871FD521F4BD9E7000BD3DC /* PlayAudioViewController.swift */,
+				786F75721F47C272000662BC /* RecordSoundsViewController.swift */,
+				7878FB3A1F41EC9100B04E3C /* AffermationsTableViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		784E24D21F5CABB000A367A9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7853082C1F4A59AE001B1D68 /* brahmavidya.json */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		7878FB2C1F41EC9100B04E3C = {
 			isa = PBXGroup;
 			children = (
@@ -72,21 +121,12 @@
 		7878FB371F41EC9100B04E3C /* MyAffirmations */ = {
 			isa = PBXGroup;
 			children = (
-				7871FD521F4BD9E7000BD3DC /* PlayAudioViewController.swift */,
-				7871FD4E1F4BD28E000BD3DC /* commonFunctions.swift */,
-				785308341F4BC264001B1D68 /* Affermations+CoreDataProperties.swift */,
-				785308301F4BC1F8001B1D68 /* Affermations+CoreDataClass.swift */,
-				7853082C1F4A59AE001B1D68 /* brahmavidya.json */,
-				786F75721F47C272000662BC /* RecordSoundsViewController.swift */,
-				7871FD501F4BD698000BD3DC /* CoreDataStack.swift */,
-				784E24CC1F5C4E6000A367A9 /* CoreDataManager.swift */,
-				7878FB381F41EC9100B04E3C /* AppDelegate.swift */,
-				7878FB3A1F41EC9100B04E3C /* AffermationsTableViewController.swift */,
-				7878FB3C1F41EC9100B04E3C /* Main.storyboard */,
-				7878FB421F41EC9100B04E3C /* Assets.xcassets */,
-				7878FB441F41EC9100B04E3C /* LaunchScreen.storyboard */,
+				784E24CF1F5CAB6A00A367A9 /* Helper */,
+				784E24CE1F5CAB5400A367A9 /* Model */,
+				784E24D21F5CABB000A367A9 /* Data */,
+				784E24D11F5CAB9D00A367A9 /* Views */,
+				784E24D01F5CAB8500A367A9 /* Assets */,
 				7878FB471F41EC9100B04E3C /* Info.plist */,
-				7878FB3F1F41EC9100B04E3C /* MyAffirmations.xcdatamodeld */,
 			);
 			path = MyAffirmations;
 			sourceTree = "<group>";

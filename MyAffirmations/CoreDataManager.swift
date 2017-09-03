@@ -30,6 +30,18 @@ class CoreDataManager: NSObject {
         _ = Affermations(dictionary: dictionary, context: dbStack.context)
         dbStack.save()
     }
+    func updateAffermation(selectedAffermation:Affermations,dictionary: [String:Any])
+    {
+        selectedAffermation.setValue(dictionary["audiofile"], forKey: "audiofile")
+        selectedAffermation.setValue(dictionary["name"], forKey: "name")
+        selectedAffermation.setValue(NSDate(), forKey: "createdon")
+        dbStack.save()
+    }
+    func deleteAffermation(selectedAffermation:Affermations)
+    {
+        dbStack.context.delete(selectedAffermation)
+        dbStack.save()
+    }
     
 
 }

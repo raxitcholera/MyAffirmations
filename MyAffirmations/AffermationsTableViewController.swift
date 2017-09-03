@@ -13,6 +13,7 @@ class AffermationsTableViewController: UIViewController {
 
     var allAffermations:[Affermations]!
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,19 @@ class AffermationsTableViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshView()
+    {
+        let request:NSFetchRequest<Affermations> = Affermations.fetchRequest()
+        do {
+            allAffermations = try dbStack.context.fetch(request)
+        }catch {
+            print("No records found")
+        }
+        performOnMainthread {
+            self.tableView.reloadData()
+        }
     }
 
 
@@ -56,7 +70,7 @@ extension AffermationsTableViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedAffermation = allAffermations[(indexPath as NSIndexPath).row]
         
-        if selectedAffermation.audiofile != NSData(){
+        if selectedAffermation.audiofile?.length != 0 {
             let controller = storyboard!.instantiateViewController(withIdentifier: "PlayAudioViewController") as! PlayAudioViewController
             controller.selectedAffermation = selectedAffermation
             performOnMainthread {
@@ -79,17 +93,22 @@ extension AffermationsTableViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         //Can add more features like share to the row here
+        let selectedAffermation = self.allAffermations[(indexPath as NSIndexPath).row]
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            let selectedAffermation = self.allAffermations[(indexPath as NSIndexPath).row]
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "RecordSoundsViewController") as! RecordSoundsViewController
             controller.selectedAffermation = selectedAffermation
             performOnMainthread {
                 self.navigationController!.pushViewController(controller, animated: true)
             }
         }
-        edit.backgroundColor = .red
-        return [edit]
+        edit.backgroundColor = .purple
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            CoreDataManager.sharedManager.deleteAffermation(selectedAffermation: selectedAffermation)
+            self.refreshView()
+        }
+        delete.backgroundColor = .red
+        return [delete,edit]
     }
 }
 

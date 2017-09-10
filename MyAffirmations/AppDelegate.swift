@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("This is the first launch ever!")
             UserDefaults.standard.set(true, forKey: "HasLaunchedBefore")
-            preloadData()
+            //preloadData()
             UserDefaults.standard.synchronize()
         }
     }

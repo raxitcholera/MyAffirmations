@@ -15,19 +15,17 @@ class PlayAudioViewController: UIViewController {
     
     @IBOutlet weak var AffermationName: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var audioTimeSlider: UISlider!
     @IBOutlet weak var StopButton: UIButton!
     var audioPlayer = AVAudioPlayer()
-
+    var updater : CADisplayLink! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AffermationName.text = selectedAffermation?.name
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        audioTimeSlider.minimumValue = 0
+        audioTimeSlider.maximumValue = 100
+        
     }
     
     @IBAction func PlayButtonPressed(_ sender:UIButton){
@@ -37,7 +35,7 @@ class PlayAudioViewController: UIViewController {
     @IBAction func stopButtonPressed(_ sender:UIButton){
         stopAudio()
     }
-
+    
 }
 
 
@@ -50,19 +48,30 @@ extension PlayAudioViewController: AVAudioPlayerDelegate {
         configureUI(PlayingState.notPlaying)
     }
     func playAudio() {
-        
-        // initialize audio engine components
+
         let data = selectedAffermation!.audiofile
         do {
             audioPlayer = try AVAudioPlayer(data: data! as Data)
+            audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             configureUI(PlayingState.playing)
             
+            updater = CADisplayLink(target: self, selector: #selector(PlayAudioViewController.trackAudio))
+            updater.frameInterval = 1
+            updater.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+            
         } catch{
-            //error message
             configureUI(PlayingState.notPlaying)
         }
+        
+    }
+    
+    func trackAudio() {
+        audioTimeSlider.value = Float(audioPlayer.currentTime * 100.0 / audioPlayer.duration)
+    }
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        configureUI(PlayingState.notPlaying)
     }
     
     func configureUI(_ playState: PlayingState) {

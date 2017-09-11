@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -223,6 +222,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dt0-uL-9wD" userLabel="IHorizontal Slider">
+                                <rect key="frame" x="14" y="253" width="347" height="31"/>
+                            </slider>
                             <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-90-vad" userLabel="StopRecordingButton">
                                 <rect key="frame" x="148" y="294" width="77.5" height="77.5"/>
                                 <constraints>
@@ -239,10 +241,14 @@
                         <constraints>
                             <constraint firstItem="cLR-90-vad" firstAttribute="centerX" secondItem="rO1-rN-PYr" secondAttribute="centerX" id="0LH-4M-Rfi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pqG-2t-v7A" secondAttribute="trailing" constant="10" id="2qf-Xa-CMb"/>
+                            <constraint firstItem="cLR-90-vad" firstAttribute="top" secondItem="Dt0-uL-9wD" secondAttribute="bottom" constant="11" id="BZl-4k-Yu2"/>
                             <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerX" secondItem="rO1-rN-PYr" secondAttribute="centerX" id="EcA-sk-k7u"/>
+                            <constraint firstItem="Dt0-uL-9wD" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="11" id="XhK-Gs-OMe"/>
                             <constraint firstItem="cLR-90-vad" firstAttribute="centerY" secondItem="rO1-rN-PYr" secondAttribute="centerY" id="cd9-6B-yDw"/>
                             <constraint firstItem="fJD-Gb-t7e" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="53" id="eGV-Fx-zca"/>
                             <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerY" secondItem="rO1-rN-PYr" secondAttribute="centerY" id="pB7-AS-FJv"/>
+                            <constraint firstItem="Dt0-uL-9wD" firstAttribute="leading" secondItem="rO1-rN-PYr" secondAttribute="leadingMargin" id="r7j-dV-g2e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dt0-uL-9wD" secondAttribute="trailing" id="uzV-x0-JkV"/>
                             <constraint firstItem="pqG-2t-v7A" firstAttribute="leading" secondItem="rO1-rN-PYr" secondAttribute="leadingMargin" constant="10" id="yb6-ir-07G"/>
                         </constraints>
                     </view>
@@ -250,6 +256,7 @@
                         <outlet property="AffermationName" destination="pqG-2t-v7A" id="29q-OS-UPO"/>
                         <outlet property="PlayButton" destination="fJD-Gb-t7e" id="7wl-Ku-29j"/>
                         <outlet property="StopButton" destination="cLR-90-vad" id="uz8-Uw-kKS"/>
+                        <outlet property="audioTimeSlider" destination="Dt0-uL-9wD" id="MES-Vy-Ufg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjN-ma-Fgk" userLabel="First Responder" sceneMemberID="firstResponder"/>

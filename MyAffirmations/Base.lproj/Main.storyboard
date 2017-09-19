@@ -223,7 +223,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dt0-uL-9wD" userLabel="IHorizontal Slider">
-                                <rect key="frame" x="14" y="253" width="347" height="31"/>
+                                <rect key="frame" x="87.5" y="253" width="199.5" height="31"/>
                             </slider>
                             <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-90-vad" userLabel="StopRecordingButton">
                                 <rect key="frame" x="148" y="294" width="77.5" height="77.5"/>
@@ -236,19 +236,37 @@
                                     <action selector="stopButtonPressed:" destination="ohc-Zx-BIN" eventType="touchUpInside" id="aMe-D0-dGy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyx-DY-zk1" userLabel="Time Played">
+                                <rect key="frame" x="16" y="258" width="71.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-AO-LPB" userLabel="Time Remaining">
+                                <rect key="frame" x="287.5" y="258" width="71.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cLR-90-vad" firstAttribute="centerX" secondItem="rO1-rN-PYr" secondAttribute="centerX" id="0LH-4M-Rfi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pqG-2t-v7A" secondAttribute="trailing" constant="10" id="2qf-Xa-CMb"/>
+                            <constraint firstItem="ZdR-AO-LPB" firstAttribute="leading" secondItem="Dt0-uL-9wD" secondAttribute="trailing" constant="2" id="9jk-Y7-A2P"/>
                             <constraint firstItem="cLR-90-vad" firstAttribute="top" secondItem="Dt0-uL-9wD" secondAttribute="bottom" constant="11" id="BZl-4k-Yu2"/>
+                            <constraint firstItem="Dyx-DY-zk1" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="16" id="Cwx-I4-hBo"/>
                             <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerX" secondItem="rO1-rN-PYr" secondAttribute="centerX" id="EcA-sk-k7u"/>
+                            <constraint firstItem="ZdR-AO-LPB" firstAttribute="trailing" secondItem="rO1-rN-PYr" secondAttribute="trailingMargin" id="Fav-JJ-6pI"/>
+                            <constraint firstItem="ZdR-AO-LPB" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="16" id="Mz1-S3-Xe5"/>
                             <constraint firstItem="Dt0-uL-9wD" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="11" id="XhK-Gs-OMe"/>
+                            <constraint firstItem="Dt0-uL-9wD" firstAttribute="leading" secondItem="Dyx-DY-zk1" secondAttribute="trailing" constant="2" id="Z7b-Yx-fyc"/>
+                            <constraint firstItem="ZdR-AO-LPB" firstAttribute="leading" secondItem="Dt0-uL-9wD" secondAttribute="trailing" constant="2" id="aOq-LR-oiK"/>
                             <constraint firstItem="cLR-90-vad" firstAttribute="centerY" secondItem="rO1-rN-PYr" secondAttribute="centerY" id="cd9-6B-yDw"/>
                             <constraint firstItem="fJD-Gb-t7e" firstAttribute="top" secondItem="pqG-2t-v7A" secondAttribute="bottom" constant="53" id="eGV-Fx-zca"/>
+                            <constraint firstItem="Dyx-DY-zk1" firstAttribute="leading" secondItem="rO1-rN-PYr" secondAttribute="leadingMargin" id="ics-9s-eH0"/>
                             <constraint firstItem="fJD-Gb-t7e" firstAttribute="centerY" secondItem="rO1-rN-PYr" secondAttribute="centerY" id="pB7-AS-FJv"/>
-                            <constraint firstItem="Dt0-uL-9wD" firstAttribute="leading" secondItem="rO1-rN-PYr" secondAttribute="leadingMargin" id="r7j-dV-g2e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dt0-uL-9wD" secondAttribute="trailing" id="uzV-x0-JkV"/>
+                            <constraint firstItem="Dt0-uL-9wD" firstAttribute="leading" secondItem="Dyx-DY-zk1" secondAttribute="trailing" constant="2" id="qrc-1V-XpI"/>
                             <constraint firstItem="pqG-2t-v7A" firstAttribute="leading" secondItem="rO1-rN-PYr" secondAttribute="leadingMargin" constant="10" id="yb6-ir-07G"/>
                         </constraints>
                     </view>
@@ -256,12 +274,14 @@
                         <outlet property="AffermationName" destination="pqG-2t-v7A" id="29q-OS-UPO"/>
                         <outlet property="PlayButton" destination="fJD-Gb-t7e" id="7wl-Ku-29j"/>
                         <outlet property="StopButton" destination="cLR-90-vad" id="uz8-Uw-kKS"/>
+                        <outlet property="TimePlayed" destination="Dyx-DY-zk1" id="9t1-gd-H44"/>
+                        <outlet property="TimeRemaining" destination="ZdR-AO-LPB" id="GKb-FF-ncb"/>
                         <outlet property="audioTimeSlider" destination="Dt0-uL-9wD" id="MES-Vy-Ufg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjN-ma-Fgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="1472"/>
+            <point key="canvasLocation" x="1872.8" y="1471.2143928035982"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,8 @@ class PlayAudioViewController: UIViewController {
     
     var selectedAffermation:Affermations?
     
+    @IBOutlet weak var TimeRemaining: UILabel!
+    @IBOutlet weak var TimePlayed: UILabel!
     @IBOutlet weak var AffermationName: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var audioTimeSlider: UISlider!
@@ -69,6 +71,8 @@ extension PlayAudioViewController: AVAudioPlayerDelegate {
     
     func trackAudio() {
         audioTimeSlider.value = Float(audioPlayer.currentTime * 100.0 / audioPlayer.duration)
+        TimePlayed.text = stringFromTimeInterval(interval: audioPlayer.currentTime) as String
+        TimeRemaining.text = stringFromTimeInterval(interval: audioPlayer.duration - audioPlayer.currentTime) as String
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         configureUI(PlayingState.notPlaying)
@@ -85,6 +89,19 @@ extension PlayAudioViewController: AVAudioPlayerDelegate {
             PlayButton.isHidden = false
             
         }
+    }
+    
+    func stringFromTimeInterval(interval: TimeInterval) -> String {
+        
+        let ti = NSInteger(interval)
+        
+//        let ms = Int((interval % 1) * 1000)
+        
+        let seconds = ti % 60
+        let minutes = (ti / 60) % 60
+        let hours = (ti / 3600)
+        
+        return String(format: "%0.2d:%0.2d:%0.2d",hours,minutes,seconds)
     }
     
     
